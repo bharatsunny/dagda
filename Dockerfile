@@ -4,6 +4,6 @@ COPY requirements.txt /opt/app/requirements.txt
 WORKDIR /opt/app
 RUN pip install -r requirements.txt
 COPY dagda /opt/app
-COPY ./dockerfiles/run.sh /
-RUN chmod +x /run.sh
-ENTRYPOINT ["/bin/sh","/run.sh"]
+COPY ./dagda/dagda.py /
+RUN chmod +x /dagda.py
+ENTRYPOINT ["/bin/sh","/dagda.py"]
